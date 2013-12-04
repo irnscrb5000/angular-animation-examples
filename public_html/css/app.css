@@ -1,0 +1,104 @@
+.my-switch-container {
+  position:relative;
+  width: 500px;
+  height:500px;
+  overflow: hidden;
+}
+.red {
+    background-color: #FF0000;
+    width: 100%;
+    height: 100%;
+}
+.green {
+    background-color: #00FF00;
+    width: 100%;
+    height: 100%;
+}
+.blue {
+    background-color: #0000FF;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    width: 500px;
+    height: 500px;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Unidirection animation - works */
+/*.slide.ng-enter,
+.slide.ng-leave {
+  -webkit-transition:0.5s linear all;
+  transition:0.5s linear all;
+
+  position:absolute;
+  top:0;
+  left:0;
+}
+
+.slide.ng-enter {
+  left:100%;
+}
+
+.slide.ng-leave,
+.slide.ng-enter.ng-enter-active {
+  left:0;
+}
+
+.slide.ng-leave.ng-leave-active {
+  left:-100%;
+}*/
+
+
+/* bidirection animation - buggy when switching directions */
+/*.slide.ng-enter, .slide.ng-leave {
+    -webkit-transition: 0.5s linear all;
+    transition: 0.5s linear all;
+}
+
+.slide.left.ng-enter, .slide.right.ng-leave.ng-leave-active {
+    left: 100%;
+}
+
+.slide.left.ng-enter.ng-enter-active, .slide.left.ng-leave, .slide.right.ng-enter.ng-enter-active, .slide.right.ng-leave {
+    left: 0;
+}
+
+.slide.left.ng-leave.ng-leave-active, .slide.right.ng-enter {
+    left: -100%;
+}*/
+
+
+/* bidirection animation using ng-show and ng-hide - pending */
+
+.slide.ng-hide-add, .slide.ng-hide-remove, .slide.ng-hide-add-active, .slide.ng-hide-remove-active,
+.slide.left.ng-hide-add, .slide.left.ng-hide-remove, .slide.left.ng-hide-add-active, .slide.left.ng-hide-remove-active,
+.slide.right.ng-hide-add, .slide.right.ng-hide-remove, .slide.right.ng-hide-add-active, .slide.right.ng-hide-remove-active {
+    -webkit-transition: all linear 1s;
+    transition: all linear 1s;
+    display: block!important;
+}
+
+.slide.left.ng-hide-remove, .slide.right.ng-hide-add.ng-hide-add-active {
+    left: 100%;
+}
+
+.slide.left.ng-hide-remove.ng-hide-remove-active, .slide.left.ng-hide-add, .slide.right.ng-hide-remove.ng-hide-remove-active, .slide.right.ng-hide-add {
+    left: 0;
+}
+
+.slide.left.ng-hide-add.ng-hide-add-active, .slide.right.ng-hide-remove {
+    left: -100%;
+}
+
+/*.slide.ng-hide-add {
+    left: 0;
+}
+
+.slide.ng-hide-add-active {
+    left: -100%;
+}*/
