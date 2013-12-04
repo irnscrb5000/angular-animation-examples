@@ -28,3 +28,27 @@
     top: 0;
     left: 0;
 }
+
+
+.slide.ng-enter,
+.slide.ng-leave {
+  -webkit-transition:0.5s linear all;
+  transition:0.5s linear all;
+
+  position:absolute;
+  top:0;
+  left:0;
+}
+
+.slide.ng-enter {
+  left:100%;
+}
+
+.slide.ng-leave,
+.slide.ng-enter.ng-enter-active {
+  left:0;
+}
+
+.slide.ng-leave.ng-leave-active {
+  left:-100%;
+}
