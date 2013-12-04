@@ -26,7 +26,8 @@ app.animation('.slide-animation', function() {
 
             if(className == 'ng-hide') {
                 var endPoint = '100%';
-                if(scope.direction !== 'right') endPoint = '-100%';
+                //var endPoint = element[0].offsetWidth;
+                if(scope.direction !== 'right') endPoint = '-100%' /*endPoint = -endPoint*/;
 
                 TweenMax.to(element, 0.5, { left: endPoint, onComplete: done });
             } else {
@@ -56,8 +57,9 @@ app.animation('.slide-animation', function() {
                 element.removeClass('ng-hide');
                 var startPoint = '100%';
                 if(scope.direction === 'right') startPoint = '-100%';
-                TweenMax.set(element, { left: startPoint });
-                TweenMax.to(element, 0.5, {left: 0, onComplete: done});
+                //TweenMax.set(element, { left: startPoint });
+                //TweenMax.to(element, 0.5, {left: 0, onComplete: done});
+                TweenMax.fromTo(element, 0.5, {left: startPoint}, {left: 0, onComplete: done});
             } else {
                 done();
             }
