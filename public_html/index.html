@@ -13,13 +13,13 @@
             <button ng-click="gotoPage(currPage + 1, 'Left')">Next</button>
             
             <div class="carousel-container">
-              <div class="slide">
+              <div class="slide" ng-hide="currPage !== 0" ng-class="{left: isSlideLeft, right: isSlideRight}">
                 <div class="red"></div>
               </div>
-              <div class="slide">
+              <div class="slide" ng-hide="currPage !== 1" ng-class="{left: isSlideLeft, right: isSlideRight}">
                 <div class="green"></div>
               </div>
-              <div class="slide">
+              <div class="slide" ng-hide="currPage !== 2" ng-class="{left: isSlideLeft, right: isSlideRight}">
                 <div class="blue"></div>
               </div>
             </div>
