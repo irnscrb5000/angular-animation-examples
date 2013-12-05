@@ -9,8 +9,8 @@
     <body ng-app="app" ng-controller="AppCtrl as app">
         
         <div>
-            <button ng-click="gotoPage(currPage - 1, 'Right')">Prev</button>
-            <button ng-click="gotoPage(currPage + 1, 'Left')">Next</button>
+            <button ng-click="gotoPage(currPage - 1, 'right')">Prev</button>
+            <button ng-click="gotoPage(currPage + 1, 'left')">Next</button>
             
             <div class="carousel-container">
               <div class="slide" ng-hide="currPage !== 0" ng-class="{left: isSlideLeft, right: isSlideRight}">

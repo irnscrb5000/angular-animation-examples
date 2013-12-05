@@ -1,13 +1,15 @@
 var app = angular.module('app', ['ngAnimate']);
 
-app.controller('AppCtrl', function($scope) {
+app.controller('AppCtrl', function($scope, $timeout) {
     var numPages = 3;
     $scope.currPage = 0;
+    $scope.isSlideLeft;
+    $scope.isSlideRight;
     
     $scope.gotoPage = function(pageIndex, direction) {
-        direction = direction || 'Left';
-        $scope.isSlideLeft = direction === 'Left';
-        $scope.isSlideRight = direction === 'Right';
+        direction = direction || 'left';
+        $scope.isSlideLeft = direction === 'left';
+        $scope.isSlideRight = direction === 'right';
         
         if(pageIndex >= numPages) {
             pageIndex = 0;
@@ -15,7 +17,9 @@ app.controller('AppCtrl', function($scope) {
             pageIndex = numPages - 1;
         }
         
-        $scope.currPage = pageIndex;
+        $timeout(function() {
+            $scope.currPage = pageIndex;
+        });
     };
 });
 
