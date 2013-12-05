@@ -12,14 +12,14 @@
             <button ng-click="gotoPage(currPage - 1, 'right')">Prev</button>
             <button ng-click="gotoPage(currPage + 1, 'left')">Next</button>
             
-            <div class="carousel-container">
-              <div class="slide slide-animation" ng-hide="currPage !== 0">
+            <div ng-switch="currPage" class="carousel-container">
+              <div ng-switch-when="0" class="slide slide-animation">
                 <div class="red"></div>
               </div>
-              <div class="slide slide-animation" ng-hide="currPage !== 1">
+              <div ng-switch-when="1" class="slide slide-animation">
                 <div class="green"></div>
               </div>
-              <div class="slide slide-animation" ng-hide="currPage !== 2">
+              <div ng-switch-when="2" class="slide slide-animation">
                 <div class="blue"></div>
               </div>
             </div>
