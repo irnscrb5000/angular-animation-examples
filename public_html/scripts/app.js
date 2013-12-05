@@ -22,16 +22,30 @@ app.controller('AppCtrl', function($scope) {
 app.animation('.slide-animation', function() {
     return {
         leave: function(element, done) {
-            var scope = element.scope();
-            var endPoint = '100%';
+            var scope = element.scope(),
+            endPoint = '100%',
+			tween;
             if(scope.direction !== 'right') endPoint = '-100%';
-            TweenMax.to(element, 0.5, { left: endPoint, onComplete: done });
+            tween = TweenMax.to(element, 0.5, { left: endPoint, onComplete: done });
+
+			return function(cancelled) {
+				if(cancelled) {
+					tween.kill();
+				}
+			}
         },
         enter: function (element, done) {
-            var scope = element.scope();
-            var startPoint = '100%';
+            var scope = element.scope(),
+            startPoint = '100%',
+			tween;
             if(scope.direction === 'right') startPoint = '-100%';
-            TweenMax.fromTo(element, 0.5, {left: startPoint}, {left: 0, onComplete: done});
+            tween = TweenMax.fromTo(element, 0.5, {left: startPoint}, {left: 0, onComplete: done});
+
+			return function (cancelled) {
+				if(cancelled) {
+					tween.kill();
+				}
+			}
         }
     };
 });
