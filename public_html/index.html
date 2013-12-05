@@ -11,19 +11,26 @@
         <div>
             <button ng-click="gotoPage(currPage - 1, 'right')">Prev</button>
             <button ng-click="gotoPage(currPage + 1, 'left')">Next</button>
-            
-            <div class="carousel-container">
-              <div class="slide" ng-hide="currPage !== 0" ng-class="{left: isSlideLeft, right: isSlideRight}">
+
+            <div ng-switch="currPage" class="carousel-container">
+              <div ng-switch-when="0" class="red slide"
+                   ng-class="{left: isSlideLeft, right:
+                             isSlideRight}">
                 <div class="red"></div>
               </div>
-              <div class="slide" ng-hide="currPage !== 1" ng-class="{left: isSlideLeft, right: isSlideRight}">
+              
+              <div ng-switch-when="1" class="green slide"
+                   ng-class="{left: isSlideLeft, right:
+                             isSlideRight}">
                 <div class="green"></div>
               </div>
-              <div class="slide" ng-hide="currPage !== 2" ng-class="{left: isSlideLeft, right: isSlideRight}">
+
+              <div ng-switch-when="2" class="blue slide"
+                             ng-class="{left: isSlideLeft, right:
+                                       isSlideRight}">
                 <div class="blue"></div>
               </div>
             </div>
-        </div>
         
         <script type="text/javascript" src="scripts/lib/angular/angular.js"></script>
         <script type="text/javascript" src="scripts/lib/angular/angular-animate.js"></script>

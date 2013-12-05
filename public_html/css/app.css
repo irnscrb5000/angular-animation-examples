@@ -29,12 +29,12 @@
     left: 0;
 }
 
-.slide.ng-hide-remove,
-.slide.ng-hide-add {
+.slide.ng-enter,
+.slide.ng-leave {
     display: block!important;
 }
 
-.slide.left.ng-hide-add {
+.slide.left.ng-leave {
     -webkit-animation: 0.5s slideOutLeft;
     animation: 0.5s slideOutLeft;
 }
@@ -47,7 +47,7 @@
     to { left: -100%; }
 }
 
-.slide.left.ng-hide-remove {
+.slide.left.ng-enter {
     -webkit-animation: 0.5s slideInLeft;
     animation: 0.5s slide-in-left;
     /* adding left 100% is necessary, because the element becomes visible before the left 100% in the keyframes is applied, so for a short while it is on top of the other slide */
@@ -64,7 +64,7 @@
 
 
 
-.slide.right.ng-hide-add {
+.slide.right.ng-leave {
     -webkit-animation: 0.5s slideOutRight;
     animation: 0.5s slideOutRight;
 }
@@ -77,7 +77,7 @@
     to { left: 100%; }
 }
 
-.slide.right.ng-hide-remove {
+.slide.right.ng-enter {
     -webkit-animation: 0.5s slideInRight;
     animation: 0.5s slideInRight;
     left: -100%;
