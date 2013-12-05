@@ -21,29 +21,17 @@ app.controller('AppCtrl', function($scope) {
 
 app.animation('.slide-animation', function() {
     return {
-        leave: function(element, className, done) {
-            console.log('leave fired');
+        leave: function(element, done) {
             var scope = element.scope();
-
-            if(className == 'ng-leave') {
-                var endPoint = '100%';
-                if(scope.direction !== 'right') endPoint = '-100%';
-                TweenMax.to(element, 0.5, { left: endPoint, onComplete: done });
-            } else {
-                done();
-            }
+            var endPoint = '100%';
+            if(scope.direction !== 'right') endPoint = '-100%';
+            TweenMax.to(element, 0.5, { left: endPoint, onComplete: done });
         },
-        enter: function (element, className, done) {
-            console.log('enter fired');
+        enter: function (element, done) {
             var scope = element.scope();
-
-            if(className == 'ng-enter') {
-                var startPoint = '100%';
-                if(scope.direction === 'right') startPoint = '-100%';
-                TweenMax.fromTo(element, 0.5, {left: startPoint}, {left: 0, onComplete: done});
-            } else {
-                done();
-            }
+            var startPoint = '100%';
+            if(scope.direction === 'right') startPoint = '-100%';
+            TweenMax.fromTo(element, 0.5, {left: startPoint}, {left: 0, onComplete: done});
         }
     };
 });
