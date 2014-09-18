@@ -7,11 +7,11 @@
         <link rel="stylesheet" href="css/app.css"/>
     </head>
     <body ng-app="app" ng-controller="AppCtrl as app">
-        
+
         <div>
             <button ng-click="gotoPage(currPage - 1, 'right')">Prev</button>
             <button ng-click="gotoPage(currPage + 1, 'left')">Next</button>
-            
+
             <div class="carousel-container">
               <div class="slide slide-animation" ng-hide="currPage !== 0">
                 <div class="red"></div>
