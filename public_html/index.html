@@ -7,27 +7,27 @@
         <link rel="stylesheet" href="css/app.css"/>
     </head>
     <body ng-app="app" ng-controller="AppCtrl as app">
+      <h1>Animation type: JS Animation with ngSwitch, Bidirectional</h1>
+      <div>
+        <button ng-click="gotoPage(currPage - 1, 'right')">Prev</button>
+        <button ng-click="gotoPage(currPage + 1, 'left')">Next</button>
 
-        <div>
-            <button ng-click="gotoPage(currPage - 1, 'right')">Prev</button>
-            <button ng-click="gotoPage(currPage + 1, 'left')">Next</button>
-
-            <div ng-switch="currPage" class="carousel-container">
-              <div ng-switch-when="0" class="slide slide-animation">
-                <div class="red"></div>
-              </div>
-              <div ng-switch-when="1" class="slide slide-animation">
-                <div class="green"></div>
-              </div>
-              <div ng-switch-when="2" class="slide slide-animation">
-                <div class="blue"></div>
-              </div>
-            </div>
+        <div ng-switch="currPage" class="carousel-container">
+          <div ng-switch-when="0" class="slide slide-animation">
+            <div class="red"></div>
+          </div>
+          <div ng-switch-when="1" class="slide slide-animation">
+            <div class="green"></div>
+          </div>
+          <div ng-switch-when="2" class="slide slide-animation">
+            <div class="blue"></div>
+          </div>
         </div>
+      </div>
 
-        <script type="text/javascript" src="scripts/lib/tweenmax/src/uncompressed/TweenMax.js"></script>
-        <script type="text/javascript" src="scripts/lib/angular/angular.js"></script>
-        <script type="text/javascript" src="scripts/lib/angular/angular-animate.js"></script>
-        <script type="text/javascript" src="scripts/app.js"></script>
+      <script type="text/javascript" src="scripts/lib/tweenmax/src/uncompressed/TweenMax.js"></script>
+      <script type="text/javascript" src="scripts/lib/angular/angular.js"></script>
+      <script type="text/javascript" src="scripts/lib/angular/angular-animate.js"></script>
+      <script type="text/javascript" src="scripts/app.js"></script>
     </body>
 </html>
