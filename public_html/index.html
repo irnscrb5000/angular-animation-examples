@@ -7,26 +7,26 @@
         <link rel="stylesheet" href="css/app.css"/>
     </head>
     <body ng-app="app" ng-controller="AppCtrl as app">
+      <h1>Animation type: CSS Transitions with ngHide, Bidirectional</h1>
+      <div>
+        <button ng-click="gotoPage(currPage - 1, 'Right')">Prev</button>
+        <button ng-click="gotoPage(currPage + 1, 'Left')">Next</button>
 
-        <div>
-            <button ng-click="gotoPage(currPage - 1, 'Right')">Prev</button>
-            <button ng-click="gotoPage(currPage + 1, 'Left')">Next</button>
-
-            <div class="carousel-container">
-              <div class="slide" ng-hide="currPage !== 0" ng-class="{left: isSlideLeft, right: isSlideRight}">
-                <div class="red">Page 1: RED</div>
-              </div>
-              <div class="slide" ng-hide="currPage !== 1" ng-class="{left: isSlideLeft, right: isSlideRight}">
-                <div class="green">Page 2: GREEN</div>
-              </div>
-              <div class="slide" ng-hide="currPage !== 2" ng-class="{left: isSlideLeft, right: isSlideRight}">
-                <div class="blue">Page 3: BLUE</div>
-              </div>
-            </div>
+        <div class="carousel-container">
+          <div class="slide" ng-hide="currPage !== 0" ng-class="{left: isSlideLeft, right: isSlideRight}">
+            <div class="red">Page 1: RED</div>
+          </div>
+          <div class="slide" ng-hide="currPage !== 1" ng-class="{left: isSlideLeft, right: isSlideRight}">
+            <div class="green">Page 2: GREEN</div>
+          </div>
+          <div class="slide" ng-hide="currPage !== 2" ng-class="{left: isSlideLeft, right: isSlideRight}">
+            <div class="blue">Page 3: BLUE</div>
+          </div>
         </div>
+      </div>
 
-        <script type="text/javascript" src="scripts/lib/angular/angular.js"></script>
-        <script type="text/javascript" src="scripts/lib/angular/angular-animate.js"></script>
-        <script type="text/javascript" src="scripts/app.js"></script>
+      <script type="text/javascript" src="scripts/lib/angular/angular.js"></script>
+      <script type="text/javascript" src="scripts/lib/angular/angular-animate.js"></script>
+      <script type="text/javascript" src="scripts/app.js"></script>
     </body>
 </html>
